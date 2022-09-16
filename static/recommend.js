@@ -50,7 +50,7 @@ function recommendcard(e){
 function load_details(my_api_key,title){
   $.ajax({
     type: 'GET',
-    url:'https://api.themoviedb.org/3/search/movie/550?api_key='+my_api_key+'&query='+title,
+    url:'https://api.themoviedb.org/3/search/movie?api_key='+my_api_key+'&query='+title,
     async: false,
     success: function(movie){
       if(movie.results.length<1){
