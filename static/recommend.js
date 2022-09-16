@@ -20,7 +20,7 @@ $(function() {
   })
 
   $('.movie-button').on('click',function(){
-    var my_api_key = '88dbb61ba8407737d726fe5bac4fade9';
+    var my_api_key = '6e689fb8682cf7fcc2c4d39b7c31decf';
     var title = $('.movie').val();
     if (title=="") {
       $('.results').css('display','none');
@@ -40,7 +40,7 @@ $(function() {
 // will be invoked when clicking on the recommended movie cards
 function recommendcard(e){
   $("#loader").fadeIn();
-  var my_api_key = '88dbb61ba8407737d726fe5bac4fade9';
+  var my_api_key = '6e689fb8682cf7fcc2c4d39b7c31decf';
   var title = e.getAttribute('title'); 
   load_details(my_api_key,title);
 }
@@ -50,7 +50,7 @@ function recommendcard(e){
 function load_details(my_api_key,title){
   $.ajax({
     type: 'GET',
-    url:'https://api.themoviedb.org/3/search/movie?api_key='+my_api_key+'&query='+title,
+    url:'https://api.themoviedb.org/3/search/movie/550?api_key='+my_api_key+'&query='+title,
     async: false,
     success: function(movie){
       if(movie.results.length<1){
